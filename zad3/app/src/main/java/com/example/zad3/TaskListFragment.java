@@ -74,8 +74,7 @@ public class TaskListFragment extends Fragment {
     }
 
     private void updateView() {
-        TaskStorage taskStorage = TaskStorage.getStorage();
-        List<Task> taskList = taskStorage.getTaskList();
+        List<Task> taskList = TaskStorage.getStorage().getTaskList();
 
         if(taskAdapter == null) {
             taskAdapter = new TaskAdapter(taskList);

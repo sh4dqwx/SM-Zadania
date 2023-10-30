@@ -26,7 +26,7 @@ public class TaskStorage {
     public Task getTaskById(UUID id) {
         return taskList
                 .stream()
-                .filter(task -> task.getId() == id)
+                .filter(task -> task.getId().equals(id))
                 .findFirst()
                 .orElse(null);
     }
