@@ -9,10 +9,12 @@ public class TaskStorage {
     private List<Task> taskList;
     private TaskStorage() {
         taskList = new ArrayList<>();
-        for(int i=1; i<=150; i++) {
+        for(int i=1; i<=3; i++) {
             Task task = new Task();
             task.setName("Pilne zadanie nr " + i);
-            task.setDone(i%3 == 0);
+            task.setDone(i % 3 == 0);
+            if(i % 3 == 0) task.setCategory(Category.STUDIES);
+            else task.setCategory(Category.HOME);
             taskList.add(task);
         }
     }
@@ -30,4 +32,6 @@ public class TaskStorage {
                 .findFirst()
                 .orElse(null);
     }
+
+    public void addTask(Task task) { taskList.add(task); }
 }

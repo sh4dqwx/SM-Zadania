@@ -10,7 +10,8 @@
         android:id="@+id/name_label"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/name_label" />
+        android:text="@string/name_label"
+        android:textColor="@color/colorPrimaryDark" />
 
     <EditText
         android:id="@+id/name_field"
@@ -25,10 +26,19 @@
         android:id="@+id/details_label"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/details_label" />
+        android:text="@string/details_label"
+        android:textColor="@color/colorPrimaryDark" />
 
-    <Button
-        android:id="@+id/date_button"
+    <EditText
+        style="@style/DatePickerStyle"
+        android:id="@+id/date_field"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:autofillHints=""
+        android:inputType="date" />
+
+    <Spinner
+        android:id="@+id/category_field"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
