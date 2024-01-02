@@ -107,10 +107,10 @@ public class MainActivity extends AppCompatActivity {
         public BookHolder(LayoutInflater inflater, ViewGroup parent) {
             super(inflater.inflate(R.layout.book_list_item, parent, false));
 
-            coverIv = findViewById(R.id.cover_iv);
-            titleTv = findViewById(R.id.title_tv);
-            authorTv = findViewById(R.id.author_tv);
-            numberOfPagesTv = findViewById(R.id.number_of_pages_tv);
+            coverIv = itemView.findViewById(R.id.cover_iv);
+            titleTv = itemView.findViewById(R.id.title_tv);
+            authorTv = itemView.findViewById(R.id.author_tv);
+            numberOfPagesTv = itemView.findViewById(R.id.number_of_pages_tv);
         }
 
         public void bind(Book book) {
@@ -119,7 +119,7 @@ public class MainActivity extends AppCompatActivity {
                 authorTv.setText(TextUtils.join(", ", book.getAuthors()));
                 numberOfPagesTv.setText(book.getNumberOfPages());
                 if(book.getCover() != null) {
-                    Picasso.with(itemView.getContext())
+                    Picasso.get()
                             .load(IMAGE_URL_BASE + book.getCover() + "-S.jpg")
                             .placeholder(R.drawable.ic_book).into(coverIv);
                 } else {
